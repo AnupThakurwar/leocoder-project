@@ -1,0 +1,26 @@
+.date-picker-container {
+  display: flex;
+  padding: 0.5rem;
+  .custom-container {
+    display: flex;
+    gap: 0.3rem;
+    border-bottom: 1px solid grey;
+    input {
+      border: none;
+      outline: none;
+      width: 80%;
+    }
+    .datetime-label-with-astricks::after {
+      content: "*";
+      color: red;
+    }
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .date-picker-container {
+    input {
+      width: 40% !important;
+    }
+  }
+}

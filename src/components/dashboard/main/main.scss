@@ -1,0 +1,170 @@
+.main-wrapper {
+  height: calc(100% - 0.283rem);
+  padding: 0.5rem;
+  .main-container {
+    font-size: 0.8rem;
+    .upper-section {
+      .checkbox-inputs {
+        display: flex;
+        gap: 1rem;
+        padding: 0.5rem;
+      }
+      .form-fields {
+        height: auto; // to be removed
+        border: 1px solid #315efb;
+        border-radius: 16px;
+        padding: 0.5rem;
+        box-shadow: 2px 2px 5px grey;
+        .person-details {
+          display: flex;
+          justify-content: center;
+          // align-items: center;
+          .section1 {
+            padding-right: 0.3rem;
+            border-right: 1px solid #315efb;
+            flex: 1;
+            .group1 {
+              display: flex;
+              // grid-template-columns: 2fr 1fr;
+            }
+          }
+          .section2 {
+            padding-left: 0.3rem;
+            flex: 1;
+
+            .group7 {
+              display: flex;
+              .listingAmount {
+                flex: 1;
+              }
+            }
+          }
+          .group1,
+          .group2,
+          .group3,
+          .group4,
+          .group5,
+          .group6,
+          .group7,
+          .group8 {
+            display: flex;
+            align-items: center;
+            // justify-content: center;
+          }
+          .group9 {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+            .addfieldbutton {
+              background-color: transparent;
+              border: 1px solid #315efb;
+              color: #315efb;
+            }
+          }
+        }
+      }
+      .file-uploads {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .property-types,
+      .property-details,
+      .amenities-features {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .property-amenities {
+        padding: 0.5rem;
+        .amenities-title {
+          font-weight: 500;
+        }
+      }
+      .types-showcase {
+        padding: 0.5rem;
+        // flex-grow: 1;
+      }
+      .feature-showcase {
+        padding: 0.5rem;
+        border: 1px solid grey;
+        flex-grow: 1;
+        font-size: 0.8rem;
+      }
+      .amenities-showcase {
+        padding: 0.5rem;
+        display: flex;
+
+        & button {
+          border: 1px solid #315efb;
+          border-radius: 20px;
+          padding: 4px 20px;
+          text-wrap: nowrap;
+          background-color: #fff;
+          font-size: 0.8rem;
+        }
+
+        &--selected button {
+          color: #fff;
+          background-color: #315efb;
+        }
+      }
+    }
+    .lower-section {
+      height: auto; // to be removed
+      border: 1px solid #315efb;
+      border-radius: 16px;
+      padding: 0.5rem;
+      box-shadow: 2px 2px 5px grey;
+      .title {
+        color: grey;
+      }
+      .section-container {
+        display: flex;
+        .description-section {
+          flex-grow: 1;
+          .desMessage {
+            flex-wrap: wrap;
+          }
+        }
+
+        .submit-section {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+        button {
+          border-radius: 22px;
+          background-color: #315efb;
+          color: #fff;
+          width: 12rem;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .form-fields {
+    width: min-content;
+  }
+  .checkbox-inputs {
+    gap: 0 !important;
+    flex-wrap: wrap;
+  }
+  .section-container {
+    button {
+      width: 8rem !important;
+    }
+  }
+}
+
+@media screen and (max-width: 922px) {
+  .person-details {
+    flex-direction: column;
+  }
+
+  .file-uploads {
+    flex-direction: column;
+  }
+}

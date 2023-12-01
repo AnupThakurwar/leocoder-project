@@ -1,0 +1,11 @@
+.radio-check-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+
+  .radiocheck-activelabel {
+    color: #315efb;
+  }
+}

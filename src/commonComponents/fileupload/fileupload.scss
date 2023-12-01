@@ -1,0 +1,40 @@
+.fileupload-container {
+  padding: 0.5rem;
+  .upload-ref-button {
+    border: 1px solid #315efb;
+    padding: 0.1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-width: 21rem;
+    box-shadow: 1px 1px 5px grey;
+    button {
+      background-color: #315efb;
+      padding: 0.5rem;
+      color: #fff;
+      min-width: 12rem;
+    }
+  }
+}
+
+@media (min-width: 1730px) and (max-width: 2500px) {
+  .fileupload-container {
+    .upload-ref-button {
+      min-width: 36rem;
+      button {
+        min-width: 12rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 1300px) and (max-width: 1730px) {
+  .fileupload-container {
+    .upload-ref-button {
+      min-width: 27rem;
+      button {
+        min-width: 12rem;
+      }
+    }
+  }
+}

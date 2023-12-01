@@ -1,0 +1,40 @@
+.textfield-container {
+  display: flex;
+  padding: 0.5rem;
+  flex-grow: 1;
+
+  .label,
+  .label-with-astricks {
+    padding-right: 0.5rem;
+    border-right: 1px solid grey;
+    border-bottom: 1px solid grey;
+    text-wrap: nowrap;
+  }
+  .label-with-astricks::after {
+    content: "*";
+    color: red;
+  }
+  input {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(44, 18, 18);
+    width: 100%;
+  }
+  textarea {
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(44, 18, 18);
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .textfield-container {
+    input {
+      width: 40% !important;
+    }
+    textarea {
+      width: 60%;
+    }
+  }
+}

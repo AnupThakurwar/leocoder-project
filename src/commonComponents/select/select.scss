@@ -1,0 +1,17 @@
+.select-container {
+  select {
+    border: none;
+    outline: none;
+    width: 95%;
+    border-bottom: 1px solid grey;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .select-container {
+    select {
+      width: 40% !important;
+    }
+  }
+}

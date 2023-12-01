@@ -1,0 +1,29 @@
+.topbar-wrapper {
+  height: 12vh;
+  width: 100%;
+  margin: 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .topbar-container {
+    height: 5vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 77%;
+    padding: 0.5rem;
+    .group1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      flex: 40%;
+      color: #315efb;
+    }
+    .group2 {
+      flex: 60%;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
