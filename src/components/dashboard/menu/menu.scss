@@ -14,6 +14,7 @@
     padding: 0.5rem;
     .list-items {
       .items-group {
+        cursor: pointer;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -36,6 +37,7 @@
       }
     }
     .last-items {
+      cursor: pointer;
       .items-group2 {
         display: flex;
         justify-content: center;

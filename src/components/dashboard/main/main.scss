@@ -95,6 +95,7 @@
         display: flex;
 
         & button {
+          cursor: pointer;
           border: 1px solid #315efb;
           border-radius: 20px;
           padding: 4px 20px;
@@ -133,6 +134,7 @@
           justify-content: center;
         }
         button {
+          cursor: pointer;
           border-radius: 22px;
           background-color: #315efb;
           color: #fff;

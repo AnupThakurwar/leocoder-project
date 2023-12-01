@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./main.scss";
 import RadioCheck from "../../../commonComponents/radioCheckbox/radioCheck";
-import TextFields from "../../../commonComponents/textfield/textfield";
-import DateTime from "../../../commonComponents/dateTime/datetime";
-import { Select } from "../../../commonComponents/select/select";
 import FileUpload from "../../../commonComponents/fileupload/fileupload";
 import {
   propertyTypes,
   propertyFeatues,
   propertyAmenities,
   selectArray,
+  propertyLeaseList,
 } from "../../../constants/constants";
+import DashboardLowerSection from "../dashboardlowersection/DashboardLowerSection";
+import PersonalDetils from "../personaldetails/personaldetils";
 
 const Main = () => {
   const [field, setField] = useState("");
@@ -93,179 +93,31 @@ const Main = () => {
       <div className="main-container">
         <section className="upper-section">
           <section className="checkbox-inputs">
-            <RadioCheck
-              type={"radio"}
-              name={"land"}
-              label={"Rental"}
-              onChange={onChangeHandle}
-              value={field}
-            />
-            <RadioCheck
-              type={"radio"}
-              name={"land"}
-              label={"Sales"}
-              onChange={onChangeHandle}
-              value={field}
-            />
-            <RadioCheck
-              type={"radio"}
-              name={"land"}
-              label={"Commercial Leasing"}
-              onChange={onChangeHandle}
-              value={field}
-            />
-            <RadioCheck
-              type={"radio"}
-              name={"land"}
-              label={"Commercial Sales"}
-              onChange={onChangeHandle}
-              value={field}
-            />
-          </section>
-          <section className="form-fields">
-            <div className="person-details">
-              <div className="section1">
-                <row className="group1">
-                  <TextFields
-                    label={"Address"}
-                    isImportant={true}
-                    name={"address"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.address}
-                    className={"address"}
-                  />
-                  <TextFields
-                    label={"Apt#"}
-                    isImportant={false}
-                    name={"apt"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.apt}
-                    className={"apt"}
-                  />
-                </row>
-                <row className="group2">
-                  <TextFields
-                    label={"Town"}
-                    isImportant={false}
-                    name={"town"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.town}
-                    className={"address"}
-                  />
-                  <TextFields
-                    label={"State"}
-                    isImportant={false}
-                    name={"state"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.state}
-                    className={"state"}
-                  />
-                  <TextFields
-                    label={"Zip Code"}
-                    isImportant={false}
-                    name={"zipcode"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.zipcode}
-                    className={"zipcode"}
-                  />
-                </row>
-                <row className="group3">
-                  <DateTime
-                    label={"Listing Date"}
-                    isImportant={true}
-                    name={"listingDate"}
-                    onChangeHandler={onchangeDateTimeHandler}
-                    startDate={startDater.listingDate}
-                  />
-                </row>
-                <row className="group4">
+            {propertyLeaseList.map((elm) => {
+              return (
+                <React.Fragment key={elm.id}>
                   <RadioCheck
                     type={"radio"}
-                    name={"fees"}
-                    label={"No fees"}
+                    name={"land"}
+                    label={elm.label}
                     onChange={onChangeHandle}
+                    value={field}
                   />
-                  <TextFields
-                    label={"Fee"}
-                    isImportant={false}
-                    name={"fees"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.fees}
-                    className={"fees"}
-                    width="50%"
-                    containerstyleObject={{ justifyContent: "end" }}
-                  />
-                  <Select
-                    value={select.OP}
-                    name={"OP"}
-                    onchangeSelector={onchangeSelectHandler}
-                    optionArray={selectArray}
-                    width={"8vw"}
-                  />
-                </row>
-                <row className="group5">
-                  <Select
-                    value={select.terms}
-                    name={"terms"}
-                    onchangeSelector={onchangeSelectHandler}
-                    optionArray={selectArray}
-                    width={"95%"}
-                  />
-                  <Select
-                    value={select.offer}
-                    name={"offer"}
-                    onchangeSelector={onchangeSelectHandler}
-                    optionArray={selectArray}
-                    width={"95%"}
-                  />
-                </row>
-                <row className="group6">
-                  <RadioCheck
-                    type={"checkbox"}
-                    name={"petFriendly"}
-                    label={"Pet Friendly"}
-                    onChange={onChangeHandle}
-                  />
-                  <RadioCheck
-                    type={"checkbox"}
-                    name={"30minute"}
-                    label={"30 Minute"}
-                    onChange={onChangeHandle}
-                  />
-                </row>
-              </div>
-              <div className="section2">
-                <row className="group7">
-                  <TextFields
-                    label={"Listing Amount"}
-                    isImportant={true}
-                    name={"listingAmount"}
-                    onChange={onchangeTextfieldHandler}
-                    value={textFields.listingAmount}
-                    className={"listingAmount"}
-                  />
-                </row>
-                <row className="group8">
-                  <DateTime
-                    label={"Date"}
-                    name={"date"}
-                    isImportant={false}
-                    onChangeHandler={onchangeDateTimeHandler}
-                    startDate={startDater.date}
-                  />
-                  <DateTime
-                    label={"Time"}
-                    name={"time"}
-                    isImportant={false}
-                    onChangeHandler={onchangeDateTimeHandler}
-                    startDate={startDater.time}
-                  />
-                </row>
-                <row className="group9">
-                  <button className="addfieldbutton">+</button>
-                </row>
-              </div>
-            </div>
+                </React.Fragment>
+              );
+            })}
+          </section>
+          <section className="form-fields">
+            <PersonalDetils
+              onchangeTextfieldHandler={onchangeTextfieldHandler}
+              textFields={textFields}
+              onchangeDateTimeHandler={onchangeDateTimeHandler}
+              startDater={startDater}
+              onChangeHandle={onChangeHandle}
+              select={select}
+              onchangeSelectHandler={onchangeSelectHandler}
+              selectArray={selectArray}
+            />
             <hr color="#315efb" />
             <div className="file-uploads">
               <div className="file-upload1">
@@ -330,36 +182,10 @@ const Main = () => {
           </section>
         </section>
         <section className="lower-section">
-          <div className="title">Description</div>
-          <div className="section-container">
-            <div className="description-section">
-              <div className="des-title">
-                <TextFields
-                  label={"Title"}
-                  isImportant={false}
-                  name={"desTitle"}
-                  onChange={onchangeTextfieldHandler}
-                  value={textFields.desTitle}
-                  className={"desTitle"}
-                />
-              </div>
-              <hr />
-              <div className="des-message">
-                <TextFields
-                  type="text-area"
-                  label={"Message"}
-                  isImportant={false}
-                  name={"desMessage"}
-                  onChange={onchangeTextfieldHandler}
-                  value={textFields.desMessage}
-                  className={"desMessage"}
-                />
-              </div>
-            </div>
-            <div className="submit-section">
-              <button>Submit</button>
-            </div>
-          </div>
+          <DashboardLowerSection
+            textFields={textFields}
+            onchangeTextfieldHandler={onchangeTextfieldHandler}
+          />
         </section>
       </div>
     </div>
